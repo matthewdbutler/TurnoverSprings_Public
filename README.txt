@@ -9,4 +9,4 @@ Simulation: Contains example code used to evolve the ODE system being studied.
 RunSpringsModel.m runs an example constant strain test.
 EvolveSpringsModel.m numerically integrates the ODE for abundant material.
 EvolveSpringsModel_FiniteBath.m numerically integrates the ODE for finite material.
-RateFunction.m and RateFunction_FiniteBath.m ses the rates for abundant and finite material, respectively.
+RateFunction.m and RateFunction_FiniteBath.m set the rates for abundant and finite material, respectively.

@@ -2,7 +2,7 @@
 % Plot compression stress test results for abundant spring supply
 % Apply constant compressive stress, calculate strain
 
-load('ConstStressTest_stress-0.1--0.01_size100_k1_a10_nmax200_compress.mat')
+load('fig8b_AbundantStressTest_compress.mat')
 
 N_sim = length(stress(:,1));
 col = parula(N_sim);
@@ -18,7 +18,7 @@ xlabel('time')
 ylabel('strain/stress')
 
 % Load and plot extension for comparison
-load('ConstStressTest_FiniteTime_stress0.01-0.1_size100_k1_a10_nmax200.mat')
+load('fig8b_AbundantStressTest.mat')
 for i=1:N_sim
     plot(time(1:tskip:end),strain(i,1:tskip:end)./stress(i,1),'color',col(i,:),'LineStyle','--')
     hold on

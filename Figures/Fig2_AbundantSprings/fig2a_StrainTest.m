@@ -3,7 +3,7 @@
 % Apply constant strain, calculate stress
 
 clear;
-load('./ConstStrainTest_strain5-50%_size100_k1_a10_nmax200.mat')
+load('./fig2a_StrainTest.mat')
 
 N_sim = length(stress(:,1));
 col = parula(N_sim);

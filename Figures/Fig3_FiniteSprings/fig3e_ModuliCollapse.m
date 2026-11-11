@@ -2,9 +2,11 @@
 % Plot collapse of moduli from analysis
 % Rescale so storage moduli run from 0 to 1
 
+clear;
+
 % Load some data
-load('AsymptoticOffset.mat') %for s0,s1
-load("OscillationTest_FiniteBath90-150_StrainAmpl0.001_size100_k1_a100_nmax200.mat")
+load('./fig3e_ModuliCollapse.mat') %for s0,s1
+load('./fig3d_Moduli.mat')
 
 N = length(total_springs);
 

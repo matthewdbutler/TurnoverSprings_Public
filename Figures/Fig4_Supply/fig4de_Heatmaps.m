@@ -5,16 +5,7 @@ clear; close all;
 
 % Specify the folder where the files live.
 myFolder = 'OscillationData_WithSupply';
-% Check to make sure that folder actually exists.  Warn user if it doesn't.
-if ~isfolder(myFolder)
-    errorMessage = sprintf('Error: The following folder does not exist:\n%s\nPlease specify a new folder.', myFolder);
-    uiwait(warndlg(errorMessage));
-    myFolder = uigetdir(); % Ask for a new one.
-    if myFolder == 0
-         % User clicked Cancel
-         return;
-    end
-end
+
 % Get a list of all files in the folder with the desired file name pattern.
 filePattern = fullfile(myFolder, '*.mat'); % Change to whatever pattern you need.
 theFiles = dir(filePattern);
@@ -28,7 +19,6 @@ for j = 1:Nfiles
 
     baseFileName = theFiles(j).name;
     fullFileName = fullfile(theFiles(j).folder, baseFileName);
-    fprintf(1, 'Reading %s\n', baseFileName);
 
     % Load data
     load(fullFileName)
@@ -50,7 +40,6 @@ end
 
 %%
 figure
-%subplot(1,3,1)
 scatter(strainfreq,Kadd,[],storage./loss,'filled')
 title('Storage/Loss')
 xscale('log'); yscale('log');
@@ -61,7 +50,6 @@ set(gca,'ColorScale','log')
 clim([1e-2 1e2])
 colorbar
 
-%subplot(1,3,2)
 figure
 scatter(strainfreq,Kadd,[],abs(storage+1i.*loss),'filled')
 title('Complex Mod')

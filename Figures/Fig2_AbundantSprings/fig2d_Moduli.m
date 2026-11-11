@@ -3,7 +3,7 @@
 % Moduli calculated from fitting to stress from oscillating strain tests
 
 clear;
-load('./OscillationTest_StrainAmpl0.01_size100_k1_a10_nmax200.mat')
+load('./fig2d_Moduli.mat')
 
 % Plot storage and loss moduli
 figure(5)

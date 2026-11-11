@@ -3,7 +3,7 @@
 % At fixed wall separation
 
 clear;
-load('LongTimeSoln.mat')
+load('fig6_Eql.mat') %Result from simulation
 
 % Calculate analytic solution
 n = (1:n_max)';

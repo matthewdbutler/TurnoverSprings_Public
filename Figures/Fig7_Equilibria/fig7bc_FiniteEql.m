@@ -3,7 +3,7 @@
 % Compare with abundant supply (dashed)
 
 clear;
-load('EqlData_Finite.mat')
+load('fig7bc_FiniteEql.mat')
 
 % Calculate analytic solution for abundant supply
 n = (1:n_max)';

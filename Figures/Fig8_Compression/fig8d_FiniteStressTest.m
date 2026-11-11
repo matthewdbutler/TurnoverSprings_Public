@@ -3,7 +3,7 @@
 % Apply constant compressive stress, calculate strain
 
 clear;
-load('ConstStressTest_FiniteBath90-110_stress-0.05_size100_k1_a10_nmax200.mat')
+load('fig8d_FiniteStressTest_compress.mat')
 
 N_sim = length(stress(:,1));
 col = parula(N_sim);
@@ -19,7 +19,7 @@ xlabel('time')
 ylabel('strain/stress')
 
 % Load and plot extension for comparison
-load('ConstStressTest_FiniteBath90-110_stress0.05_size100_k1_a10_nmax200.mat')
+load('fig8d_FiniteStressTest.mat')
 for i=1:2:N_sim
     plot(time(1:tskip:end),strain(i,1:tskip:end)./stress(i,1),'color',col(i,:),'LineStyle','--')
     hold on

@@ -3,7 +3,7 @@
 % Moduli calculated from fitting to stress from oscillating strain tests
 
 clear;
-load('./OscillationTest_FiniteBath90-150_StrainAmpl0.001_size100_k1_a100_nmax200.mat')
+load('./fig3d_Moduli.mat')
 
 N = length(total_springs);
 col = parula(N);
@@ -17,7 +17,7 @@ for i=1:N
 end
 
 % Plot abundant spring result for comparison
-load('OscillationTest_StrainAmpl0.001_size100_k1_a100_nmax200.mat')
+load('./fig3d_Abundant.mat')
 loglog(StrainFreq,StorageMod,'k-',StrainFreq,LossMod,'k--')
-
+ylim([1e-3 1.2])
 

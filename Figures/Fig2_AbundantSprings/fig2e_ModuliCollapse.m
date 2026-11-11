@@ -6,16 +6,7 @@ clear;
 
 % Specify the folder where the files live.
 myFolder = './OscillationData';
-% Check to make sure that folder actually exists.  Warn user if it doesn't.
-if ~isfolder(myFolder)
-    errorMessage = sprintf('Error: The following folder does not exist:\n%s\nPlease specify a new folder.', myFolder);
-    uiwait(warndlg(errorMessage));
-    myFolder = uigetdir(); % Ask for a new one.
-    if myFolder == 0
-        % User clicked Cancel
-        return;
-    end
-end
+
 % Get a list of all files in the folder with the desired file name pattern.
 filePattern = fullfile(myFolder, '*.mat'); % Change to whatever pattern you need.
 theFiles = dir(filePattern);
@@ -39,14 +30,13 @@ for j = 1:Nfiles
     % Read each file in turn
     baseFileName = theFiles(j).name;
     fullFileName = fullfile(theFiles(j).folder, baseFileName);
-    fprintf(1, 'Reading %s\n', baseFileName);
 
     % Load
     load(fullFileName)
 
     % Calculate parameter
     param_num(j) = a_barrier.*StrainAmpl./stretch0;
-    n_param = round(-10*log10(param_num(j)))-10; % value for colourmap
+    n_param = round(-10*log10(param_num(j)))-10; % crude value for colourmap, replaced later
     timescale(j) = stretch0./2./a_barrier;
 
     % Plot data with rescaled time
@@ -54,7 +44,6 @@ for j = 1:Nfiles
     loglog(timescale(j).*StrainFreq,StorageMod,'Color',col(n_param,:))
     hold on
     loglog(timescale(j).*StrainFreq,LossMod,'--','Color',col(n_param,:))
-
 
 end
 

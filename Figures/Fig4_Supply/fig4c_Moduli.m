@@ -3,7 +3,7 @@
 % Moduli calculated from fitting to stress from oscillating strain tests
 
 clear;
-load('OscillationTest_SupplyRate0.01-100_size100_k1_a100_nmax200.mat')
+load('fig4c_Moduli.mat')
 
 N = length(K_add);
 col = parula(N);

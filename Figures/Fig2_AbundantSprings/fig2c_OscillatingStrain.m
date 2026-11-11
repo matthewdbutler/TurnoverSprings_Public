@@ -3,7 +3,7 @@
 % Apply oscillating strain, calculate stress
 
 clear;
-load('./OscillationExample')
+load('./fig2c_OscillatingStrain.mat')
 
 N = length(StrainFreq);
 col = parula(N);

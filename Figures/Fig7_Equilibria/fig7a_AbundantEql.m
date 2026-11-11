@@ -2,7 +2,7 @@
 % Analytic equilibrium distributions for abundant supply
 
 clear;
-load('EqlData_Abundant.mat')
+load('fig7a_AbundantEql.mat')
 
 figure(1)
 plot(spring0(:,1:100)')

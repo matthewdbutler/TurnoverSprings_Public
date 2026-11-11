@@ -6,7 +6,7 @@
 clear;
 
 % Load data for calculation with 5% strain
-load('ResidualStress_AsymptoticVsFullSoln.mat')
+load('fig3b_ResidualStress1.mat')
 
 % Plot calculated stress from analytic and asymptotic expressions
 figure(7)
@@ -15,11 +15,11 @@ hold on
 % plot(TotSprings,ResidualStress_asymptotic,'b--')
 
 % Load data points from strain test for comparison
-load('./ConstStrainTest_FiniteBath90-110_strain5%_size100_k1_a10_nmax200.mat')
+load('fig3a_StrainTest.mat')
 plot(total_springs,stress(:,end),'bs')
 
 % Repeat with undeformed state
-load('ResidualStress_AsymptoticVsFullSoln_NoDeform.mat')
+load('fig3b_ResidualStress2.mat')
 
 % Plot calculated stress from analytic and asymptotic expressions
 figure(7)
@@ -28,7 +28,7 @@ hold on
 % plot(TotSprings,ResidualStress_asymptotic,'r--')
 
 % Load and plot residual/prestress from oscillation tests (mean across all freq)
-load("OscillationTest_FiniteBath90-150_StrainAmpl0.01_size100_k1_a10_nmax200.mat")
+load("fig3b_OscillationData.mat")
 plot(total_springs,mean(Residual),'r^')
 
 xlabel('Total springs, $M_{tot}$')
